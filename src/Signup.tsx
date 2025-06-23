@@ -32,6 +32,26 @@ const Signup = () => {
           value={formik.values.firstName}
         />
       </div>
+      <div className='input-container'>
+        <input
+          id='lastName'
+          name='lastName'
+          type='text'
+          placeholder='Last Name'
+          onChange={formik.handleChange}
+          value={formik.values.lastName}
+        />
+      </div>
+      <div className='input-container'>
+        <input
+          id='email'
+          name='email'
+          type='email'
+          placeholder='Email'
+          onChange={formik.handleChange}
+          value={formik.values.email}
+        />
+      </div>
     </form>
   );
 };
