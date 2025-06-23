@@ -15,13 +15,15 @@ const Signup = () => {
 
   const formik = useFormik({
     initialValues,
-    onSubmit: () => {},
+    onSubmit: (values) => {
+      console.log(values);
+    },
   });
 
-  console.log('formik.values', formik.values);
+  // console.log('formik.values', formik.values);
 
   return (
-    <form>
+    <form onSubmit={formik.handleSubmit}>
       <div className='input-container'>
         <input
           id='firstName'
@@ -52,6 +54,7 @@ const Signup = () => {
           value={formik.values.email}
         />
       </div>
+      <button type='submit'>Submit</button>
     </form>
   );
 };
