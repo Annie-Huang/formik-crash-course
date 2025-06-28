@@ -41,6 +41,7 @@ const Signup = () => {
           onChange={formik.handleChange}
           value={formik.values.firstName}
         />
+        {formik.errors.firstName ? <p>{formik.errors.firstName}</p> : null}
       </div>
       <div className='input-container'>
         <input
