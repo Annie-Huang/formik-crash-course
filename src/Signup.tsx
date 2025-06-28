@@ -47,7 +47,9 @@ const Signup = () => {
           onBlur={formik.handleBlur}
           value={formik.values.firstName}
         />
-        {formik.errors.firstName ? <p>{formik.errors.firstName}</p> : null}
+        {formik.touched.firstName && formik.errors.firstName ? (
+          <p>{formik.errors.firstName}</p>
+        ) : null}
       </div>
       <div className='input-container'>
         <input
@@ -59,7 +61,9 @@ const Signup = () => {
           onBlur={formik.handleBlur}
           value={formik.values.lastName}
         />
-        {formik.errors.lastName ? <p>{formik.errors.lastName}</p> : null}
+        {formik.touched.lastName && formik.errors.lastName ? (
+          <p>{formik.errors.lastName}</p>
+        ) : null}
       </div>
       <div className='input-container'>
         <input
@@ -71,7 +75,9 @@ const Signup = () => {
           onBlur={formik.handleBlur}
           value={formik.values.email}
         />
-        {formik.errors.email ? <p>{formik.errors.email}</p> : null}
+        {formik.touched.email && formik.errors.email ? (
+          <p>{formik.errors.email}</p>
+        ) : null}
       </div>
       <button type='submit'>Submit</button>
     </form>
