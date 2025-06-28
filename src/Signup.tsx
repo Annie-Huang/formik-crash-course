@@ -32,7 +32,8 @@ const Signup = () => {
   });
 
   // console.log('formik.values', formik.values);
-  console.log('formik.errors', formik.errors);
+  // console.log('formik.errors', formik.errors);
+  console.log('formik.touched', formik.touched);
 
   return (
     <form onSubmit={formik.handleSubmit}>
@@ -43,6 +44,7 @@ const Signup = () => {
           type='text'
           placeholder='First Name'
           onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
           value={formik.values.firstName}
         />
         {formik.errors.firstName ? <p>{formik.errors.firstName}</p> : null}
@@ -54,6 +56,7 @@ const Signup = () => {
           type='text'
           placeholder='Last Name'
           onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
           value={formik.values.lastName}
         />
         {formik.errors.lastName ? <p>{formik.errors.lastName}</p> : null}
@@ -65,6 +68,7 @@ const Signup = () => {
           type='email'
           placeholder='Email'
           onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
           value={formik.values.email}
         />
         {formik.errors.email ? <p>{formik.errors.email}</p> : null}
