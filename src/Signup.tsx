@@ -24,6 +24,7 @@ const Signup = () => {
       lastName: Yup.string()
         .max(20, 'Must be 20 characters or less')
         .required('Required'),
+      email: Yup.string().email('Invalid email address').required('Required'),
     }),
     onSubmit: (values) => {
       console.log(values);
@@ -66,6 +67,7 @@ const Signup = () => {
           onChange={formik.handleChange}
           value={formik.values.email}
         />
+        {formik.errors.email ? <p>{formik.errors.email}</p> : null}
       </div>
       <button type='submit'>Submit</button>
     </form>
