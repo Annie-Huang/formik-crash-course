@@ -1,5 +1,7 @@
 import React from 'react';
 import { useFormik } from 'formik';
+import * as Yup from 'yup';
+import './Signup.css';
 
 type Values = {
   firstName: string;
@@ -15,12 +17,18 @@ const Signup = () => {
 
   const formik = useFormik({
     initialValues,
+    validationSchema: Yup.object({
+      firstName: Yup.string()
+        .max(15, 'Must be 15 characters or less')
+        .required('Required'),
+    }),
     onSubmit: (values) => {
       console.log(values);
     },
   });
 
   // console.log('formik.values', formik.values);
+  console.log('formik.errors', formik.errors);
 
   return (
     <form onSubmit={formik.handleSubmit}>
